@@ -107,4 +107,20 @@ import { Tabs, Tab } from "../index";
     
 </Playground>
 
+### Disabled Tab
+
+<Playground>
+  {() => {
+    const [activeTabIndex, setActiveTabIndex] = useState(0);
+    return (
+      <Fragment>
+        <Tabs onSelectTab={setActiveTabIndex} activeTabIndex={activeTabIndex}>
+            <Tab label="tab 1" />
+            <Tab label="tab 2" />
+            <Tab label="tab 3" disabled/>
+        </Tabs>
+      </Fragment>
+    );
+  }}
+</Playground>
 

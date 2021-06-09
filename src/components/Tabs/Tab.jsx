@@ -9,6 +9,7 @@ const Tab = ({
   onSelect,
   tabIndex,
   isActive,
+  disabled,
   className,
   style,
   label,
@@ -19,12 +20,20 @@ const Tab = ({
   const { theme } = useTheme();
   const handleOnClick = (e) => {
     e.preventDefault();
-    onSelect(tabIndex);
+    if (!disabled) {
+      onSelect(tabIndex);
+    }
   };
   const activeBorderColor = getThemeProperty(theme, "tab-active-color");
   const defaultBorderColor = getThemeProperty(theme, "tab-default-color");
-  const activeBackgroundColor = getThemeProperty(theme, "tab-active-background");
-  const defaultBackgroundColor = getThemeProperty(theme, "tab-default-background");
+  const activeBackgroundColor = getThemeProperty(
+    theme,
+    "tab-active-background"
+  );
+  const defaultBackgroundColor = getThemeProperty(
+    theme,
+    "tab-default-background"
+  );
   const activeTextColor = getThemeProperty(theme, "tab-text-active-color");
   const defaultTextColor = getThemeProperty(theme, "tab-text-color");
   const slide = useSpring({
@@ -45,6 +54,7 @@ const Tab = ({
           : dropdownMode
           ? styles.tabDropdownMode
           : styles.tabHorizontal,
+        disabled && styles.disabled,
         className
       )}
       style={{ ...slide, style }}
@@ -62,6 +72,7 @@ Tab.propTypes = {
   onSelect: PropTypes.func,
   tabIndex: PropTypes.number,
   isActive: PropTypes.bool,
+  disabled: PropTypes.bool,
   className: PropTypes.string,
   style: PropTypes.object,
   label: PropTypes.node,

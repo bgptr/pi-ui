@@ -46,6 +46,7 @@ const darkTheme = {
 
   "tab-text-color": "var(--color-gray-blue)",
   "tab-text-active-color": "#E9F8FE",
+  "tab-text-disabled-color": "#152042",
   "tab-count-background": "#2F4D8C",
 
   "icon-color": "#36579E",

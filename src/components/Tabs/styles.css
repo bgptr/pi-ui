@@ -10,6 +10,11 @@
   color: var(--tab-text-active-color) !important;
 }
 
+.tab.disabled {
+  color: var(--tab-text-disabled-color) !important;
+  cursor: not-allowed;
+}
+
 .tabHorizontal {
   composes: tab;
   padding-bottom: 0.6rem;

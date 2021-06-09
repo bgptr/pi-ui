@@ -135,6 +135,7 @@ const lightTheme = {
   "tab-default-color": "var(--topbanner-color)",
   "tab-text-color": "var(--color-gray-dark)",
   "tab-text-active-color": "var(--color-primary-dark)",
+  "tab-text-disabled-color": "var(--color-gray)",
 
   /** Comments */
   "comment-like-color": "var(--color-gray)",
